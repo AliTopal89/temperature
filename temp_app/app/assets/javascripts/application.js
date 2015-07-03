@@ -17,7 +17,7 @@
 $(document).ready(function(){
 
 
-  var weatherOnline = "http://api.worldweatheronline.com/free/v2/weather.ashx?q=20852&format=json&date=today&includelocation=yes&key=a0a0205a5848630b4b3cb200e4683"
+  var weatherOnline = "http://api.worldweatheronline.com/free/v2/weather.ashx?q=20052&format=json&date=today&includelocation=yes&key=a0a0205a5848630b4b3cb200e4683"
   $.ajax({
     url: weatherOnline,
     type: "GET",
