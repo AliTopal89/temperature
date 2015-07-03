@@ -15,16 +15,17 @@
 //= require turbolinks
 //= require_tree .
 $(document).ready(function(){
-  var weatherUndergroundUrl = "http://api.wunderground.com/api/e5036540adcdadcd/conditions/q/MD/Bethesda.json?"
+	
+
+  var weatherOnline = "http://api.worldweatheronline.com/free/v2/weather.ashx?q=20852&format=json&date=today&includelocation=yes&key=a0a0205a5848630b4b3cb200e4683"
   $.ajax({
-    url: weatherUndergroundUrl,
+    url: weatherOnline,
     type: "GET",
     dataType: "json"
   }).done(function(response){
-  	$("#city").append("   " + response.current_observation.display_location.city + "")
 
-  	$("#temperature_c").append("   " + response.current_observation.temp_c + " Celsius")
+  	$("#temperature_c").append("   " + response.data.current_condition[0].temp_C + " Celsius")
 
-    $("#temperature_f").append("   " + response.current_observation.temp_f + " Fahreneit")
+    $("#temperature_f").append("   " + response.data.current_condition[0].temp_F + " Fahreneit")
 	})
 });
