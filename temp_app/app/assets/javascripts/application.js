@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+  var weatherUndergroundUrl = "http://api.wunderground.com/api/e5036540adcdadcd/conditions/q/MD/Bethesda.json?"
+  $.ajax({
+    url: weatherUndergroundUrl,
+    type: "GET",
+    dataType: "json"
+  }).done(function(response){
+  	$("#city").append("   " + response.current_observation.display_location.city + "")
+
+  	$("#temperature_c").append("   " + response.current_observation.temp_c + " Celsius")
+
+    $("#temperature_f").append("   " + response.current_observation.temp_f + " Fahreneit")
+	})
+});
