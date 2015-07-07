@@ -16,6 +16,12 @@
 //= require_tree .
 
 $(document).ready(function(){
+	$('#PageRefresh').click(function() {
+ 
+            location.reload();
+ 
+  });
+
 
 	var form = $("#search")
 	var tempSearch = $("#temp-search")
@@ -35,7 +41,7 @@ $(document).ready(function(){
 	  	$("#temperature_c").append("   " + response.data.current_condition[0].temp_C + " Celsius")
 
     	$("#temperature_f").append("   " + response.data.current_condition[0].temp_F + " Fahreneit")
-    	
+		
 	});
   });
 
