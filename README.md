@@ -2,7 +2,9 @@
 
 To set the app:
 
- - Git clone git@github.com:AliTopal89/temperature.git
+ - git clone git@github.com:AliTopal89/temperature.git
+ - on the command line after the $ write `cd temp_app`
+
 
 Setup the rails app:
 
