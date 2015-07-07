@@ -20,6 +20,7 @@
 	color:#5988ee;
 }
 
+
 @import url(http://fonts.googleapis.com/css?family=Raleway+Dots);
 
 body{
@@ -779,6 +780,6 @@ body{
     opacity: 0;
   }
   100%{
-    oapcity: 0;
+    opacity: 0;
   }
 }

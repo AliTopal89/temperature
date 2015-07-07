@@ -23,12 +23,12 @@ $(document).ready(function(){
   });
 
 
-	var form = $("#search")
-	var tempSearch = $("#temp-search")
+	var form = $("#search");
+	var tempSearch = $("#temp-search");
 
 	form.on("submit", function(event){
- 	event.preventDefault()
-	var query = tempSearch.val()
+ 	event.preventDefault();
+	var query = tempSearch.val();
 	$.ajax({
 		url: "http://api.worldweatheronline.com/free/v2/weather.ashx?" + query + "&format=json&date=today&includelocation=yes&key=a0a0205a5848630b4b3cb200e4683",
     	data: {"q": JSON.stringify({"query": query})},
@@ -36,13 +36,15 @@ $(document).ready(function(){
     	dataType: "jsonp",
     	context: this
   	}).done(function(response){
-  		$("#location").append("   " + response.data.nearest_area[0].areaName[0].value + "")
+  		
+  		$("#location").append("   " + response.data.nearest_area[0].areaName[0].value + "" + "|");
 
-	  	$("#temperature_c").append("   " + response.data.current_condition[0].temp_C + " Celsius")
+	  	$("#temperature_c").append("   " + response.data.current_condition[0].temp_C + " Celsius" + ",|");
 
-    	$("#temperature_f").append("   " + response.data.current_condition[0].temp_F + " Fahreneit")
-		
+    	$("#temperature_f").append("   " + response.data.current_condition[0].temp_F + " Fahreneit" + "|");  
+ 
 	});
+
   });
 
 });
